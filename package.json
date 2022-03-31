@@ -1,7 +1,10 @@
 {
   "name": "por-ui",
   "version": "0.1.0",
+  "description": "0.0.1",
   "private": false,
+  "author": "ruiqi11",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
