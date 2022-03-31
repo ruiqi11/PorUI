@@ -1,4 +1,4 @@
-# porui
+# por-ui
 
 ## Project setup
 ```
