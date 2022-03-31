@@ -1,24 +1,17 @@
-# por-ui
+# porUI
 
-## Project setup
-```
-yarn install
-```
+## 安装
+npm install poly-ui element-ui -s
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+### 使用
+```javascript
+// 导入elementui
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 ```
 
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```javascript
+import polyUi from 'poly-ui'
+import 'poly-ui/dist/poly-ui.css'
+Vue.use(polyUi)
