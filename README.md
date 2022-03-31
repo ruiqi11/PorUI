@@ -1,17 +1,15 @@
 # porUI
 
 ## 安装
-npm install poly-ui element-ui -s
+```javascript
+npm install por-ui element-ui -s
+```
 
 ### 使用
 ```javascript
-// 导入elementui
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI);
-```
+// main.js，导入porUI
+import porUI from 'por-ui'
+import 'por-ui/dist/por-ui.css'
+Vue.use(porUI)
 
-```javascript
-import polyUi from 'poly-ui'
-import 'poly-ui/dist/poly-ui.css'
-Vue.use(polyUi)
+```
