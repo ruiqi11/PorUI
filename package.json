@@ -5,6 +5,10 @@
   "private": false,
   "author": "ruiqi11",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ruiqi11/PorUI.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
