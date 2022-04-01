@@ -41,3 +41,16 @@ $input-height: 32px;
 $red-hover-color: #e94043;
 $min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
+// 旋转动画
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin spin {
+  animation: spin 2s infinite linear;
+}

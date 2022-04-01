@@ -1,10 +1,11 @@
 <template>
     <!-- class属性绑定计算属性的btnClass数组 -->
     <!-- 使用$emit触发click事件，同时要把事件源$event传出去，效果是在外面一点击就把当前事件触发给click事件，同时在外面绑定的方法里，可以拿到事件源。-->
-		<button class='por-button' :class='btnClass' :disabled='loading' @click="$emit('click',$event)">
+		<button class='por-button' :class='btnClass' :disabled='loading' @click="$emit('click',$event)" data-color="#409EFF">
+      <!-- 涟漪效果 -->
+      <por-canvas globalListen v-if="press"></por-canvas>     
       <!-- 字体图标 -->
       <por-icon :icon="icon" v-if="icon" class="icon"></por-icon>
-      <!-- 因为有可能插槽会有一些样式，这里用span多包一层,并且判断有插槽再创建span -->
       <!-- 加载状态 -->
       <por-icon icon="icon-jiazai" v-if="loading" class="icon"></por-icon>
       <span v-if='this.$slots.default'>
@@ -49,6 +50,10 @@ export default {
       loading: {
         type: Boolean, // 布尔类型在传值的时候可以直接写不用赋值
         default: false
+      },
+      press: {
+        type: Boolean,
+        default: false
       }
     },
   computed:{
@@ -62,6 +67,9 @@ export default {
       // 图标位置类型（左，右）
       if (this.iconPosition) {
         classes.push(`icon-${this.iconPosition}`)
+      }
+      if (this.press) {
+        classes.push(`button-press`)
       }
       return classes
     }
@@ -146,9 +154,11 @@ $active-color: #3a8ee6;
   }
   // loading 状态
   &[disabled]{ // 属性选择器
-    cursor: not-allowed; // 禁止点击
+    cursor: not-allowed; // 禁止点击;
+    .icon {
+      @include spin;
+    }
   }
-
 }
   // 设置子元素顺序的方式控制图标的位置
 .icon-left {
@@ -167,6 +177,16 @@ $active-color: #3a8ee6;
   }
   span {
     order: 1;
+  }
+}
+.button-press{
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  outline: none;
+  &:hover {
+    border-color: #dcdfe6;
+    background-color: #fff;
   }
 }
 </style>
