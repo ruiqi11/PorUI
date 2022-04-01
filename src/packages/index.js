@@ -2,6 +2,7 @@
 import Button from './button.vue'
 import Icon from './icon.vue'
 import ButtonGroup from './button-group.vue'
+import Input from './input.vue'
 
 // 在install方法里注册 全局组件
 // 引入的时候，use这个方法
@@ -10,6 +11,7 @@ const install = (Vue) => {
   Vue.component(Button.name, Button)
   Vue.component(Icon.name, Icon)
   Vue.component(ButtonGroup.name, ButtonGroup)
+  Vue.component(Input.name, Input)
 }
 
 

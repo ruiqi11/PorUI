@@ -70,158 +70,103 @@ export default {
 </script>
 
 
-<style lang='scss'>
-  // 导入公共样式
-  @import '../styles/_var.scss'; 
+<style lang='scss' scoped>
+// 导入公共样式
+@import '../styles/_var.scss'; 
 
-  // 设置一些公共变量
-  $height: 42px; 
-  $font-size: 16px;
-  $color: #606266;
-  $border-color: #dcdfe6;
-  $background: #ecf5ff;
-  $active-color: #3a8ee6;
+// 设置一些公共变量
+$height: 42px; 
+$font-size: 16px;
+$color: #606266;
+$border-color: #dcdfe6;
+$background: #ecf5ff;
+$active-color: #3a8ee6;
 
-  // 按钮基本样式
-  .por-button {
-    border-radius: $border-radius;
-    border: 1px solid $border-color;
-    color: $color;
-    background: #fff;
-    height: $height;
-    cursor: pointer;
-    font-size: $font-size;
-    line-height: 1;
-    padding: 12px 20px;
-    display: inline-flex;
-    justify-content: center;
-    vertical-align: middle;
-    &:hover {
-      border-color: $border-color;
-      background-color: $background;
-    }
-    &:focus,&:active {
-      color: $active-color;
-      border-color: $active-color;
-      background-color: $background;
-      outline: none;
-    }
-    // 类名：颜色对，待循环
-    $color-list: ( 
-      primary: $primary,
-      success: $success,
-      info: $info,
-      warning: $warning,
-      danger: $danger
-    );
-    // 循环颜色maps，两个参数第一个为键第二个为值
-    // .$type为类名，$color为颜色
-    @each $type,$color in $color-list {
-      &-#{$type} {
-        background: #{$color};
-        border: 1px solid #{$color};
-        color: #fff;
-      }
-    }
-    // 鼠标经过
-    @each $type,$color in (primary:$primary-hover, success:$success-hover, info:$info-hover, warning:$warning-hover, danger:$danger-hover) {
-        &-#{$type}:hover {
-            background: #{$color};
-            border: 1px solid #{$color};
-            color: #fff;
-        }
-    }
-    // 点击
-    @each $type,$color in (primary:$primary-active, success:$success-active, info:$info-active, warning:$warning-active, danger:$danger-active) {
-        &-#{$type}:active, &-#{$type}:focus {
-          background: #{$color};
-          border: 1px solid #{$color};
-          color: #fff;
-        }
-    }
-    // 设置按钮icon大小
-    .icon {
-      width: 16px;
-      height: 16px;
-    }
-    // loading 状态
-    &[disabled]{ // 属性选择器
-    cursor: not-allowed; // 禁止点击
+// 按钮基本样式
+.por-button {
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  color: $color;
+  background: #fff;
+  height: $height;
+  cursor: pointer;
+  font-size: $font-size;
+  line-height: 1;
+  padding: 12px 20px;
+  display: inline-flex;
+  justify-content: center;
+  vertical-align: middle;
+  &:hover {
+    border-color: $border-color;
+    background-color: $background;
   }
-
+  &:focus,&:active {
+    color: $active-color;
+    border-color: $active-color;
+    background-color: $background;
+    outline: none;
   }
-    // 设置子元素顺序的方式控制图标的位置
-    .icon-left {
-      .icon {
-        order: 1; // 顺序排第一
-        margin-right: 5px;
-      }
-      span {
-        order: 2; // 顺序排第二
-      }
-    }
-    .icon-right {
-      .icon {
-        margin-left: 5px;
-        order: 2;
-      }
-      span {
-        order: 1;
-      }
-    }
-
-  // 因为五中类型的按钮样式一个个写太过复杂，这里采用scss的循环遍历@each来写
-  // 格式：
-  // @each 类型,颜色  in (key:值) { 
-  //  #{}取值表达式
-  // }
-
-  $color-list: (
+  // 类名：颜色对，待循环
+  $color-list: ( 
     primary: $primary,
     success: $success,
     info: $info,
     warning: $warning,
     danger: $danger
   );
-  @each $c123, $c2 in $color-list {
-    #{"." + $c123} {
-      background: #{$c2};
-      border: 1px solid #{$c2};
-      color: #fff;
-      fill: #fff; //把颜色填充到当前元素内
-    }
-  }
-  @each $type,
-    $color
-      in (
-        primary: $primary-hover,
-        success: $success-hover,
-        info: $info-hover,
-        warning: $warning-hover,
-        danger: $danger-hover
-      )
-  {
-    #{"." + $type}:hover {
+  // 循环颜色maps，两个参数第一个为键第二个为值
+  // .$type为类名，$color为颜色
+  @each $type,$color in $color-list {
+    &-#{$type} {
       background: #{$color};
       border: 1px solid #{$color};
       color: #fff;
     }
   }
-  @each $type,
-    $color
-      in (
-        primary: $primary-active,
-        success: $success-active,
-        info: $info-active,
-        warning: $warning-active,
-        danger: $danger-active
-      )
-  {
-    #{"." + $type}:active,
-    #{"." + $type}:focus {
-      background: #{$color};
-      border: 1px solid #{$color};
-      color: #fff;
-    }
+  // 鼠标经过
+  @each $type,$color in (primary:$primary-hover, success:$success-hover, info:$info-hover, warning:$warning-hover, danger:$danger-hover) {
+      &-#{$type}:hover {
+          background: #{$color};
+          border: 1px solid #{$color};
+          color: #fff;
+      }
   }
+  // 点击
+  @each $type,$color in (primary:$primary-active, success:$success-active, info:$info-active, warning:$warning-active, danger:$danger-active) {
+      &-#{$type}:active, &-#{$type}:focus {
+        background: #{$color};
+        border: 1px solid #{$color};
+        color: #fff;
+      }
+  }
+  // 设置按钮icon大小
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+  // loading 状态
+  &[disabled]{ // 属性选择器
+    cursor: not-allowed; // 禁止点击
+  }
+
+}
+  // 设置子元素顺序的方式控制图标的位置
+.icon-left {
+  .icon {
+    order: 1; // 顺序排第一
+    margin-right: 5px;
+  }
+  span {
+    order: 2; // 顺序排第二
+  }
+}
+.icon-right {
+  .icon {
+    margin-left: 5px;
+    order: 2;
+  }
+  span {
+    order: 1;
+  }
+}
 </style>

@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 @import "./../styles/_var.scss"; // 导入公共样式
 // 通过样式让整个按钮组只有四个角是圆角，并且两个按钮之间只有1px边框
 .button-group {

@@ -25,5 +25,28 @@
       <por-button icon='icon-back' type="primary" >上一页</por-button>
       <por-button icon='icon-more' type="primary" icon-position='right'>下一页</por-button>
     </por-button-group>
+    <br />
+    <br />
+    <!-- 输入框 -->
+    <por-input value="默认样式"></por-input>
+    <por-input value="内容提示" title="内容提示"></por-input>
+    <por-input value="禁止输入" disabled></por-input>
+    <por-input value="只读" readonly></por-input>
+    <por-input value="值" error="错误"></por-input>
+    <br/>
+    <!-- 双向绑定（Vue自有的） -->
+    <por-input v-model="value"></por-input>
+    <div>
+      value: {{value}}
+    </div>
   </div>
 </template>
+<script>
+export default {
+  data: function(){
+    return{
+      value: 1
+    }
+  }
+}
+</script>

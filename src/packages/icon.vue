@@ -15,7 +15,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .por-icon {
     width: 30px;
     height: 30px;
