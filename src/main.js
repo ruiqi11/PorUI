@@ -7,7 +7,7 @@ import porUI from './packages/index'
 
 
 // 或按需导入
-let components = [
+const componentArry = [
   porUI.Button,
   porUI.ButtonGroup,
   porUI.Input,
@@ -15,16 +15,23 @@ let components = [
   porUI.TabsBody,
   porUI.TabsHead,
   porUI.TabsItem,
-  porUI.TabsPane
+  porUI.TabsPane,
+  porUI.Toast
 ]
-components.forEach(component => {
+componentArry.forEach(component => {
   Vue.component(component.name, component);
 });
-// Vue.component(porUI.Button.name, porUI.Button)
-// Vue.component(porUI.ButtonGroup.name, porUI.ButtonGroup)
-// Vue.component(porUI.Input.name, porUI.Input)
-// Vue.use(porUI.ButtonGroup)
 
+// 引入插件 use只能接收install
+// Vue.use(porUI.install)
+
+// 使用原型的方式引入插件
+const pluginArry = [
+  porUI.Plugin.toastPlugin
+]
+pluginArry.forEach(plugin => {
+  Vue.prototype.$toast = plugin
+})
 
 Vue.config.productionTip = false
 

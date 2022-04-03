@@ -69,8 +69,18 @@
     </por-tabs>
     <br>
     <br>
+    <!-- 定时模式模式 -->
+    <por-button @click="$toast('点击弹出提示')">上方弹出</por-button>
+    <por-button @click="$toast('点击弹出提示', {position:'middle'})">中间弹出</por-button>
+    <por-button @click="$toast('点击弹出提示', {position:'bottom'})">下方弹出</por-button>
     <br>
     <br>
+    <!-- 设置关闭按钮 -->
+    <por-button @click="onClickButton">上方弹出</por-button>
+    <br>
+    <br>
+    <!-- 支持 HTML -->
+    <por-button @click="onClickButton">上方弹出</por-button>
   </div>
 </template>
 <script>
@@ -80,10 +90,25 @@ export default {
       value: '1',
       selected: '1'
     }
+  },
+  methods: {
+    onClickButton () {
+      this.$toast('你知道我在等你吗？', {
+        closeButton: {
+          text: '知道了',
+          callback: () => {
+            console.log('他说知道了')
+          }
+        }
+      })
+    }
   }
 }
 </script>
-// <style lang='scss' scoped>
+<style lang='scss' scoped>
+  .por-toast {
+    z-index: 30;
+  }
 // button{
 //   box-sizing: border-box;
 //   white-space: nowrap;
@@ -103,4 +128,4 @@ export default {
 //   cursor: pointer;
 //   border: solid 1px #ccc;
 // }
-// </style>
+</style>
