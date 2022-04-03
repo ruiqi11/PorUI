@@ -42,13 +42,43 @@
     <div>
       value: {{value}}
     </div>
+    <br>
+    <br>
+    <!-- tabs -->
+    <por-tabs :selected="selected">
+      <por-tabs-head>
+        <por-tabs-item name="1">1</por-tabs-item>
+        <por-tabs-item name="2">2</por-tabs-item>
+        <por-tabs-item name="3" disabled>3</por-tabs-item>
+      </por-tabs-head>
+      <por-tabs-body>
+        <por-tabs-pane name="1">content 1</por-tabs-pane>
+        <por-tabs-pane name="2">content 2</por-tabs-pane>
+        <por-tabs-pane name="3">content 3</por-tabs-pane>
+      </por-tabs-body>
+    </por-tabs>
+    <por-tabs :selected="selected" direction="vertical">
+      <por-tabs-head>
+        <por-tabs-item name="1">1</por-tabs-item>
+        <por-tabs-item name="2">2</por-tabs-item>
+      </por-tabs-head> 
+      <por-tabs-body>
+        <por-tabs-pane name="1">content 1</por-tabs-pane>
+        <por-tabs-pane name="2">content 2</por-tabs-pane>
+      </por-tabs-body>
+    </por-tabs>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
 </template>
 <script>
 export default {
-  data: function(){
+  data(){
     return{
-      value: '1'
+      value: '1',
+      selected: '1'
     }
   }
 }

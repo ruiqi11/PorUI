@@ -2,18 +2,28 @@
 import Button from './button/button.vue'
 import ButtonGroup from './button/button-group.vue'
 import Input from './input.vue'
+import Tabs from './tabs/tabs.vue'
+import TabsBody from './tabs/tabs-body.vue'
+import TabsHead from './tabs/tabs-head.vue'
+import TabsItem from './tabs/tabs-item.vue'
+import TabsPane from './tabs/tabs-pane.vue'
 
 
-const components = [
+const components = {
   Button,
   ButtonGroup,
-  Input
-]
+  Input,
+  Tabs,
+  TabsBody,
+  TabsHead,
+  TabsItem,
+  TabsPane
+}
 
 // 在install方法里注册 全局组件
 // 引入的时候，use这个方法
 const install = function(Vue) {
-  components.forEach(component => {
+  Object.keys(components).forEach(component => {
     Vue.component(component.name, component);
   });
 };
@@ -31,7 +41,5 @@ if (typeof window.Vue !== 'undefined') {
 
 export default {
   install,
-  Button,
-  ButtonGroup,
-  Input
+  ...components
 }

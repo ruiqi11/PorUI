@@ -1,14 +1,21 @@
 import Vue from 'vue'
 import App from './App.vue'
-// 按需导入
-
+import porUI from './packages/index'
 
 // 整个组件挂载到全局
-import porUI from './packages/index'
+// Vue.use(porUI)
+
+
+// 或按需导入
 let components = [
   porUI.Button,
   porUI.ButtonGroup,
-  porUI.Input
+  porUI.Input,
+  porUI.Tabs,
+  porUI.TabsBody,
+  porUI.TabsHead,
+  porUI.TabsItem,
+  porUI.TabsPane
 ]
 components.forEach(component => {
   Vue.component(component.name, component);
@@ -17,7 +24,6 @@ components.forEach(component => {
 // Vue.component(porUI.ButtonGroup.name, porUI.ButtonGroup)
 // Vue.component(porUI.Input.name, porUI.Input)
 // Vue.use(porUI.ButtonGroup)
-// Vue.use(porUI.Input)
 
 
 Vue.config.productionTip = false
