@@ -22,10 +22,6 @@
     <br />
     <br />
     <por-button press>涟漪效果</por-button>
-    <button data-color="#66B1FF">
-      <span>点击</span>
-      <por-canvas globalListen></por-canvas>  
-    </button>
     <br />
     <br />
     <por-button-group>
@@ -57,24 +53,24 @@ export default {
   }
 }
 </script>
-<style lang='scss' scoped>
-button{
-  box-sizing: border-box;
-  white-space: nowrap;
-  outline: none;
-  color: #000;
-  background-color: #fff;
-  font-size: 20px;
-  line-height: 1;
-  padding: 0.5rem 1.2rem;
-  margin: 0;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  border: solid 1px #ccc;
-}
-</style>
+// <style lang='scss' scoped>
+// button{
+//   box-sizing: border-box;
+//   white-space: nowrap;
+//   outline: none;
+//   color: #000;
+//   background-color: #fff;
+//   font-size: 20px;
+//   line-height: 1;
+//   padding: 0.5rem 1.2rem;
+//   margin: 0;
+//   display: inline-flex;
+//   justify-content: center;
+//   align-items: center;
+//   vertical-align: middle;
+//   position: relative;
+//   overflow: hidden;
+//   cursor: pointer;
+//   border: solid 1px #ccc;
+// }
+// </style>

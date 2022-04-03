@@ -55,7 +55,6 @@ export default {
     },
     // 点击网页其他位置
     onClickDocument(e) {
-      console.log('调用了2')
       if (
         this.$refs.wCanvas &&
         (this.$refs.wCanvas === e.target ||
@@ -64,7 +63,6 @@ export default {
         return;
       }
       this.clearRect();
-      console.log('调用了3')
       document.removeEventListener("click", this.onClickDocument);
     },
     // 点击canvas
@@ -76,7 +74,6 @@ export default {
       // 调用绘制函数
       this.draw();
       if (this.globalListen) {
-        console.log('调用了1')
         this.$nextTick(() => {
           // document全局监听点击事件
           // true - 事件句柄在捕获阶段执行
@@ -88,13 +85,10 @@ export default {
     // 清空像素
     clearRect() {
       const canvass = document.getElementsByClassName("por-canvas");
-      console.log(5)
       for (let i = 0; i < canvass.length; i++) {
         const context = canvass[i].getContext("2d");
-        console.log(context.fillStyle)
         if (context.fillStyle !== "#000000") { //fillStyle 属性设置或返回用于填充绘画的颜色、渐变或模式。
           context.fillStyle = "#000000";
-          console.log('调用了6')
           context.clearRect(0, 0, canvass[i].width, canvass[i].height);// 清空给定矩形内的指定像素
         }
       }
@@ -113,7 +107,6 @@ export default {
         false
       );
       context.fillStyle = this.clickedParentElement.dataset.color;// dataset.color=data-color(自定义属性)
-      console.log(this.clickedParentElement.dataset.color)
       context.fill();
       this.insideRadius += 5;
       if (

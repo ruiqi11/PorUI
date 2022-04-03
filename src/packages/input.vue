@@ -21,8 +21,12 @@
   </div>
 </template>
 <script>
+import Icon from './icon'
 export default {
   name: "por-input",
+  components: {
+    'por-icon': Icon
+  },
   props: {
     value: {
       type: String

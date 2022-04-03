@@ -15,8 +15,14 @@
     </button>
 </template>
 <script>
+import Icon from '../icon'
+import Canvas from '../canvas'
 export default {
 	name: 'por-button', // 定义组件名
+  components: {
+    'por-icon': Icon,
+    'por-canvas': Canvas
+  },
   props:{
     // type，按钮颜色类型
     type: {
@@ -80,7 +86,7 @@ export default {
 
 <style lang='scss' scoped>
 // 导入公共样式
-@import '../styles/_var.scss'; 
+@import '../../styles/_var.scss'; 
 
 // 设置一些公共变量
 $height: 42px; 
