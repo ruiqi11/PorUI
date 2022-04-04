@@ -17,7 +17,12 @@ const componentArry = [
   porUI.TabsItem,
   porUI.TabsPane,
   porUI.Toast,
-  porUI.Popover
+  porUI.Popover,
+  porUI.Layout,
+  porUI.LayoutContent,
+  porUI.LayoutHeader,
+  porUI.LayoutSider,
+  porUI.LayoutFonter
 ]
 componentArry.forEach(component => {
   Vue.component(component.name, component);

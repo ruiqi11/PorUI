@@ -10,6 +10,12 @@ import TabsPane from './tabs/tabs-pane.vue'
 import Toast from './toast.vue'
 import Plugin from './plugin.js'
 import Popover from './popover.vue'
+import Layout from './layout/layout.vue'
+import LayoutHeader from './layout/header.vue'
+import LayoutContent from './layout/content.vue'
+import LayoutFonter from './layout/footer.vue'
+import LayoutSider from './layout/sider.vue'
+
 
 
 const components = {
@@ -22,7 +28,12 @@ const components = {
   TabsItem,
   TabsPane,
   Toast,
-  Popover
+  Popover,
+  Layout,
+  LayoutHeader,
+  LayoutContent,
+  LayoutFonter,
+  LayoutSider
 }
 
 // 在install方法里注册 全局组件
@@ -39,7 +50,6 @@ const install = function(Vue) {
 // 当前全局window下有Vue实例的话，直接调用install把Vue传进去
 if (typeof window.Vue !== 'undefined') {
   install(Vue)
-    // install2(Vue)
 }
 // Vue只有用script标签的方式导入才会挂载到window上
 // import的方式导入是挂载不到window上的，而是在当前的模块内
@@ -47,7 +57,6 @@ if (typeof window.Vue !== 'undefined') {
 
 export default {
   install,
-  // install2,
   Plugin,
   ...components
 }
