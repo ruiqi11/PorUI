@@ -16,9 +16,7 @@ const toastPlugin = function(message, toastOptions) {
     }
   })
 }
-export default {
-  toastPlugin
-}
+export default toastPlugin
 
 
 /* helpers */

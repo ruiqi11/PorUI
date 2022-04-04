@@ -1,43 +1,56 @@
 import Vue from 'vue'
 import App from './App.vue'
+
+
+// 全局挂载整个组件
 import porUI from './packages/index'
-
-// 整个组件挂载到全局
-// Vue.use(porUI)
+Vue.use(porUI)
 
 
-// 或按需导入
-const componentArry = [
-  porUI.Button,
-  porUI.ButtonGroup,
-  porUI.Input,
-  porUI.Tabs,
-  porUI.TabsBody,
-  porUI.TabsHead,
-  porUI.TabsItem,
-  porUI.TabsPane,
-  porUI.Toast,
-  porUI.Popover,
-  porUI.Layout,
-  porUI.LayoutContent,
-  porUI.LayoutHeader,
-  porUI.LayoutSider,
-  porUI.LayoutFonter
-]
-componentArry.forEach(component => {
-  Vue.component(component.name, component);
-});
+// 按需导入
+// import {
+// Button,
+// ButtonGroup,
+// Input,
+// Tabs,
+// TabsBody,
+// TabsHead,
+// TabsItem,
+// TabsPane,
+// Toast,
+// Popover,
+// Layout,
+// LayoutContent,
+// LayoutHeader,
+// LayoutSider,
+// LayoutFonter
+// } from './packages/index'
 
-// 引入插件 use只能接收install
-// Vue.use(porUI.install)
 
-// 使用原型的方式引入插件
-const pluginArry = [
-  porUI.Plugin.toastPlugin
-]
-pluginArry.forEach(plugin => {
-  Vue.prototype.$toast = plugin
-})
+// Vue.component(Button.name, Button);
+// Vue.component(ButtonGroup.name, ButtonGroup);
+// Vue.component(Input.name, Input);
+// Vue.component(Tabs.name, Tabs);
+// Vue.component(TabsBody.name, TabsBody);
+// Vue.component(TabsHead.name, TabsHead);
+// Vue.component(TabsItem.name, TabsItem);
+// Vue.component(TabsPane.name, TabsPane);
+// Vue.component(Toast.name, Toast);
+// Vue.component(Popover.name, Popover);
+// Vue.component(Layout.name, Layout);
+// Vue.component(LayoutContent.name, LayoutContent);
+// Vue.component(LayoutHeader.name, LayoutHeader);
+// Vue.component(LayoutFonter.name, LayoutFonter);
+// Vue.component(LayoutSider.name, LayoutSider);
+
+
+
+// 两种方式引入插件
+// 1.引入插件 use只能接收install
+// 2.使用原型的方式引入插件
+import { Plugin } from './packages/index'
+Vue.prototype.$toast = Plugin
+
 
 Vue.config.productionTip = false
 

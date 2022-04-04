@@ -1,4 +1,5 @@
 // 所有组件的入口，我们可以在这里进行扩展一些组件，并进行整合
+import Vue from 'vue'
 import Button from './button/button.vue'
 import ButtonGroup from './button/button-group.vue'
 import Input from './input.vue'
@@ -39,11 +40,10 @@ const components = {
 // 在install方法里注册 全局组件
 // 引入的时候，use这个方法
 const install = function(Vue) {
-  Object.keys(components).forEach(component => {
-    Vue.component(component.name, component);
-  });
-};
-
+  Object.values(components).forEach(component => {
+    Vue.component(component.name, component)
+  })
+}
 
 
 // 如果是script标签的方式引入并不会调用install方法，这里需要处理一下
@@ -55,8 +55,29 @@ if (typeof window.Vue !== 'undefined') {
 // import的方式导入是挂载不到window上的，而是在当前的模块内
 
 
-export default {
-  install,
+export default install
+// export default {
+//   install,
+//   // Plugin,
+//   ...components
+// }
+
+
+export {
   Plugin,
-  ...components
+  Button,
+  ButtonGroup,
+  Input,
+  Tabs,
+  TabsBody,
+  TabsHead,
+  TabsItem,
+  TabsPane,
+  Toast,
+  Popover,
+  Layout,
+  LayoutHeader,
+  LayoutContent,
+  LayoutFonter,
+  LayoutSider
 }
