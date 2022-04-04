@@ -67,7 +67,7 @@
     // }
     // 线条
     > .vertical{
-      right: 0px;
+      right: -0.5px;
       border-bottom: none;
       border-right: 2px solid blue;
     }

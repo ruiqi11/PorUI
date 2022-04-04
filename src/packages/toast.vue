@@ -20,12 +20,17 @@
   export default {
     name: 'PorToast',
     props: {
-      // 自动关闭
+      // 自动关闭时间
       autoClose: {
         type: [Boolean, Number],
-        default: 5,
-        validator (value) {
-          return value === false || typeof value === 'number';
+        default (value) {
+          if(value === false){
+            return false
+          }else if(typeof value === 'number'){
+            return value
+          }else{
+            return 2
+          }
         }
       },
       // 关闭按钮
@@ -51,8 +56,10 @@
         }
       }
     },
+    // 因为点击会弹出toast重新渲染页面，所以会触发mouted
     mounted () {
       this.updateStyles()
+      // 自动关闭
       this.execAutoClose()
     },
     computed: {

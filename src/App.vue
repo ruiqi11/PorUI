@@ -67,20 +67,74 @@
         <por-tabs-pane name="2">content 2</por-tabs-pane>
       </por-tabs-body>
     </por-tabs>
-    <br>
-    <br>
+    <br/>
+    <br/>
     <!-- 定时模式模式 -->
-    <por-button @click="$toast('点击弹出提示')">上方弹出</por-button>
+    <por-button @click="$toast('点击弹出提示')" border>上方弹出</por-button>
     <por-button @click="$toast('点击弹出提示', {position:'middle'})">中间弹出</por-button>
     <por-button @click="$toast('点击弹出提示', {position:'bottom'})">下方弹出</por-button>
-    <br>
-    <br>
+    <br/>
+    <br/>
     <!-- 设置关闭按钮 -->
-    <por-button @click="onClickButton">上方弹出</por-button>
+    <por-button @click="onClickButton" autoClose="false">上方弹出</por-button>
     <br>
     <br>
     <!-- 支持 HTML -->
-    <por-button @click="onClickButton">上方弹出</por-button>
+    <por-button @click="onClickButton" autoClose="false">上方弹出</por-button>
+    <br/>
+    <br/>
+    <!-- tabs -->
+    <por-popover>
+      <por-button>上方弹出</por-button>
+      <template slot="content">
+        弹出内容
+      </template>
+    </por-popover>
+    <por-popover position="bottom">
+      <por-button>下方弹出</por-button>
+      <template slot="content">
+        弹出内容
+      </template>
+    </por-popover>
+    <por-popover position="left">
+      <por-button>左边弹出</por-button>
+      <template slot="content">
+        弹出内容
+      </template>
+    </por-popover>
+    <por-popover position="right">
+      <por-button>右边弹出</por-button>
+      <template slot="content">
+        弹出内容
+      </template>
+    </por-popover>
+    <br>
+    <br>
+     <!-- hover模式 -->
+     <por-popover trigger="hover">
+      <por-button>上方弹出</por-button>
+      <template slot="content">
+        弹出内容
+      </template>
+    </por-popover>
+    <por-popover position="bottom" trigger="hover">
+      <por-button>下方弹出</por-button>
+      <template slot="content">
+        弹出内容
+      </template>
+    </por-popover>
+    <por-popover position="left" trigger="hover">
+      <por-button>左边弹出</por-button>
+      <template slot="content">
+        弹出内容
+      </template>
+    </por-popover>
+    <por-popover position="right" trigger="hover">
+      <por-button>右边弹出</por-button>
+      <template slot="content">
+        弹出内容
+      </template>
+    </por-popover>
   </div>
 </template>
 <script>

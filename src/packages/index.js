@@ -9,6 +9,7 @@ import TabsItem from './tabs/tabs-item.vue'
 import TabsPane from './tabs/tabs-pane.vue'
 import Toast from './toast.vue'
 import Plugin from './plugin.js'
+import Popover from './popover.vue'
 
 
 const components = {
@@ -20,7 +21,8 @@ const components = {
   TabsHead,
   TabsItem,
   TabsPane,
-  Toast
+  Toast,
+  Popover
 }
 
 // 在install方法里注册 全局组件
